@@ -1,0 +1,36 @@
+{
+  "name": "jacket",
+  "version": "1.0.0",
+  "description": "SSR frontend stack for modern web",
+  "scripts": {
+    "server:build": "webpack --config=webpack.server.js --mode=production",
+    "server:dev": "webpack --config=webpack.server.js --mode=development --watch",
+    "server:watch": "concurrently \"npm run server:dev\" \"nodemon ./dist/server/server.js\"",
+    "client:build": "webpack --config=webpack.client.js --mode=production",
+    "client:watch": "webpack --config=webpack.client.js --mode=development --watch",
+    "dev": "concurrently \"npm run server:watch\" \"npm run client:watch\""
+  },
+  "author": "Majid Ghafoorzade",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/hbs": "^4.0.1",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "concurrently": "^8.2.0",
+    "nodemon": "^3.0.1",
+    "ts-loader": "^9.4.4",
+    "typescript": "^5.1.6",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-node-externals": "^3.0.0"
+  },
+  "dependencies": {
+    "@fastify/static": "^6.10.2",
+    "@fastify/view": "^8.0.0",
+    "dotenv": "^16.3.1",
+    "fastify": "^4.19.2",
+    "hbs": "^4.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
